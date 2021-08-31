@@ -1,7 +1,8 @@
-# microk8s-example-stack
+# microk8s-auth0-example-stack
 
-This is a PoC for a microk8s stack using Traefik IngressRoute as ingress
-controller.
+This is a [microk8s](https://microk8s.io/) stack that uses Traefik
+IngressRoute as ingress controller. Auth0 is used for global authentication,
+relying on Traefik's `forwardAuth` middleware.
 
 ## Installing
 

@@ -17,6 +17,9 @@ spec:
         - name: auth
           image: auth-server:test
           imagePullPolicy: IfNotPresent
+          envFrom:
+            - secretRef:
+                name: auth0-credentials
 ---
 apiVersion: v1
 kind: Service

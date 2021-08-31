@@ -26,7 +26,7 @@ shutdown:
 	microk8s kubectl delete -R -f manifests/
 	microk8s stop
 
-# Start the cluster (duh)
+# Start the cluster
 start:
 	microk8s start
 	microk8s enable dashboard dns helm3 registry
@@ -46,4 +46,5 @@ traefik-dashboard:
 
 # Update cluster
 update:
+	microk8s kubectl create secret generic auth0-credentials --from-env-file secrets/auth0
 	microk8s kubectl apply -R -f manifests/
