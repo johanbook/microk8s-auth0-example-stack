@@ -18,7 +18,7 @@ install:
 
 # Create a proxy to Traefik service
 proxy:
-	microk8s kubectl port-forward `microk8s kubectl get svc --selector "app.kubernetes.io/name=traefik" --output=name` :80
+	sudo microk8s kubectl port-forward `microk8s kubectl get svc --selector "app.kubernetes.io/name=traefik" --output=name` 80:80
 
 # Shutdown cluster. Can also use `microk8s reset` to remove
 # helm installs and plugins
